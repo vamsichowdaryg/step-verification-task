@@ -1,0 +1,44 @@
+<p>final works!</p>
+<section>
+  <header class="header">
+    <h4
+      [ngClass]="{
+        'active-step': currentStep === 1,
+        'inactive-step': currentStep !== 1
+      }"
+      (click)="showStep(1)"
+    >
+      step1
+    </h4>
+    <h4
+      [ngClass]="{
+        'active-step': currentStep === 2,
+        'inactive-step': currentStep !== 2
+      }"
+      (click)="showStep(2)"
+    >
+      step2
+    </h4>
+    <h4
+      [ngClass]="{
+        'active-step': currentStep === 3,
+        'inactive-step': currentStep !== 3
+      }"
+      (click)="showStep(3)"
+    >
+      step3
+    </h4>
+  </header>
+  <div class="content">
+    <app-name class="left"></app-name>
+
+    <!-- Placeholder for dynamically created component -->
+    <div class="right">
+      <ng-template appsteps></ng-template>
+    </div>
+  </div>
+  <div class="footer">
+    <button (click)="nextStep()">Next</button>
+    <button (click)="prevStep()">Back</button>
+  </div>
+</section>
